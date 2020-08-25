@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="aravind" id="3">
+        <createTable tableName="process_details">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="process" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="file_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+             <column name="status" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="user_id"  type="INT">
+                <constraints nullable="false"/>
+            </column>
+            
+        </createTable>
+        <rollback>
+            <dropTable tableName="process_details"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
