@@ -17,8 +17,7 @@ public class AlartCotroller {
 	
 	@RequestMapping(value="/trigger")
 	public String triggerAlart(@RequestParam Integer teamId) {
-		alartService.alart(teamId);
-		return "success";
+		return alartService.alart(teamId);
 	}
 	
 }

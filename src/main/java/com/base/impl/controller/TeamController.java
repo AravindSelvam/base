@@ -1,5 +1,6 @@
 package com.base.impl.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,6 @@ public class TeamController {
 	
 	@RequestMapping(value="/create")
 	public Map<String, String> createTeam(@RequestBody  TeamRequest request){
-		teamService.createTeam(request);
-		return null;
+		return teamService.createTeam(request);
 	}
 }
